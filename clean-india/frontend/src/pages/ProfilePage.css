@@ -1,0 +1,202 @@
+.profile-page { padding-bottom: 3rem; }
+
+.profile-header {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+.profile-cover {
+  height: 80px;
+  width: 100%;
+}
+
+.profile-info {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0 1.5rem 1.5rem;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.profile-avatar-wrap {
+  margin-top: -40px;
+  flex-shrink: 0;
+}
+
+.profile-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--bg-card);
+}
+
+.profile-avatar-placeholder {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green-500), var(--teal));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  border: 4px solid var(--bg-card);
+}
+
+.profile-details { flex: 1; min-width: 0; }
+
+.profile-name-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.profile-username {
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: var(--font-display);
+}
+
+.profile-location, .profile-joined { margin-top: 0.25rem; }
+
+.edit-form { width: 100%; }
+
+.edit-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.edit-actions { display: flex; gap: 0.75rem; }
+
+/* Profile Stats */
+.profile-stats {
+  display: flex;
+  border-top: 1px solid var(--border);
+}
+
+.profile-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 1.25rem 1rem;
+  border-right: 1px solid var(--border);
+}
+
+.profile-stat:last-child { border-right: none; }
+
+.profile-stat-icon { font-size: 1.25rem; }
+
+.profile-stat-value {
+  font-size: 1.4rem;
+  font-weight: 800;
+  font-family: var(--font-display);
+  color: var(--green-400);
+  line-height: 1;
+}
+
+.profile-stat-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* Badges */
+.profile-badges {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.75rem;
+}
+
+.profile-badge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 1rem 0.75rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-align: center;
+  transition: border-color 0.2s;
+}
+
+.profile-badge-item:hover { border-color: var(--green-500); }
+
+.badge-big-icon { font-size: 2rem; }
+.badge-big-name { font-size: 0.8rem; font-weight: 700; font-family: var(--font-display); }
+.badge-big-desc { font-size: 0.7rem; color: var(--text-muted); }
+
+/* Uploads Grid */
+.profile-uploads-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.75rem;
+}
+
+.profile-upload-thumb {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+}
+
+.profile-upload-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.profile-upload-thumb:hover img { transform: scale(1.05); }
+
+.upload-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0.5rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.5));
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.profile-upload-thumb:hover .upload-overlay { opacity: 1; }
+
+.pts-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  font-family: var(--font-display);
+}
+
+.section-heading {
+  font-size: 1rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .profile-stats { flex-wrap: wrap; }
+  .profile-stat { min-width: 50%; border-right: none; border-bottom: 1px solid var(--border); }
+  .edit-row { grid-template-columns: 1fr; }
+  .profile-badges { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .profile-info { flex-direction: column; align-items: flex-start; }
+  .profile-avatar-wrap { margin-top: -48px; }
+}
