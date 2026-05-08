@@ -40,8 +40,16 @@ router.patch('/auth/notifications/read', auth, authController.markNotificationsR
 router.post('/uploads',
   auth,
   uploadLimiter,
-  upload.single('media'),
-  uploadController.createUpload
+  (req, res) => {
+    console.log("UPLOAD WORKING");
+
+    res.json({
+      success: true,
+      upload: {
+        status: "pending"
+      }
+    });
+  }
 );
 router.get('/uploads/me', auth, uploadController.getMyUploads);
 router.get('/uploads/feed', uploadController.getFeed);
