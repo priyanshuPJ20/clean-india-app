@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
+import logo from '../../assets/logo.png';
 
 const Footer = () => (
   <footer className="footer">
     <div className="footer-inner">
-      <div className="footer-brand">
-        <span className="footer-logo">♻️ CleanIndia</span>
-        <p>Making India cleaner, one dustbin at a time.</p>
-      </div>
+      <div className="footer-logo">
+  <img src={logo} alt="Clean India" className="footer-custom-logo" />
+  <p>Making India cleaner, one dustbin at a time.</p>
+</div>
       <div className="footer-links">
         <Link to="/feed">Feed</Link>
         <Link to="/leaderboard">Leaderboard</Link>

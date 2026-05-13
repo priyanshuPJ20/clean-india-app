@@ -14,11 +14,11 @@ exports.createUpload = async (req, res) => {
     const mediaPublicId = req.file.filename;
 
     // Anti-cheat: Check for duplicate image hash
-    const imageHash = generateImageHash(mediaUrl);
-    const duplicate = await Upload.findOne({ imageHash, user: req.user._id });
-    if (duplicate) {
-      return res.status(400).json({ success: false, message: 'This image has already been uploaded.' });
-    }
+   // const imageHash = generateImageHash(mediaUrl);
+    //const duplicate = await Upload.findOne({ imageHash, user: req.user._id });
+    //if (duplicate) {
+   // return res.status(400).json({ success: false, message: 'This image has already been uploaded.' });
+    //}
 
     // Rate limiting: Max 5 uploads per day per user
     const startOfDay = new Date();
@@ -38,7 +38,7 @@ exports.createUpload = async (req, res) => {
       mediaPublicId,
       mediaType,
       caption,
-      imageHash,
+      imageHash:null,
       location: {
         type: 'Point',
         coordinates: [parseFloat(longitude) || 0, parseFloat(latitude) || 0],

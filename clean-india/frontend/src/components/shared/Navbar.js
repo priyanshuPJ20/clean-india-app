@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuthStore from '../../store/authStore';
 import './Navbar.css';
-
+import logo from '../../assets/logo.png';
 const Navbar = () => {
   const { user, token, logout } = useAuthStore();
   const location = useLocation();
@@ -27,10 +27,9 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-inner">
-        <Link to="/" className="navbar-logo">
-          <span className="logo-icon">♻️</span>
-          <span className="logo-text">Clean<span className="logo-accent">India</span></span>
-        </Link>
+       <Link to="/" className="navbar-logo">
+        <img src={logo} alt="Clean India" className="custom-logo" />
+       </Link>
 
         <div className="navbar-links">
           <Link to="/feed" className={`nav-link ${isActive('/feed') ? 'active' : ''}`}>Feed</Link>

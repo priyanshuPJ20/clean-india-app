@@ -52,3 +52,9 @@
   .footer-inner { flex-direction: column; text-align: center; }
   .footer-links { justify-content: center; }
 }
+
+.footer-custom-logo {
+  height: 85px;
+  width: auto;
+  object-fit: contain;
+}

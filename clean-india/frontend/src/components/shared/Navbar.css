@@ -222,3 +222,19 @@
   .mobile-menu-btn { display: flex; }
   .mobile-menu { display: flex; }
 }
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.custom-logo {
+  height: 95px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.custom-logo:hover {
+  transform: scale(1.05);
+}
